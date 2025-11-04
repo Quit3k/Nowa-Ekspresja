@@ -35,7 +35,7 @@ export default function Navbar() {
           className="text-3xl font-bold text-slate-900 whitespace-nowrap" 
           onClick={closeMenu}
         >
-          Nowa <span className="text-red-600">Ekspresja</span>
+          Nowa <span className="text-red-600">ekspresja</span>
         </Link>
 
         <nav className="hidden items-center gap-6 xl:flex ml-auto mr-auto">
