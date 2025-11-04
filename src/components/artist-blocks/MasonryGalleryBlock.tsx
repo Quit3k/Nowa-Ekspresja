@@ -30,19 +30,18 @@ export default function MasonryGalleryBlock({ data }: { data: MasonryGalleryBloc
   // Logika dystrybucji obrazów do kolumn
   const columns: string[][] = [[], [], []];
   
-  // Decydujemy, które obrazy pokazać
   const imagesToShow = isExpanded 
     ? data.allImages 
     : data.allImages.slice(0, data.initialVisible);
 
-  // Rozdzielamy obrazy do 3 kolumn
   imagesToShow.forEach((image, index) => {
     columns[index % 3].push(image);
   });
 
   return (
     <>
-      <section className="py-20 bg-white">
+      {/* --- POPRAWKA: Dodajemy ID pasujące do linku w Navbarze --- */}
+      <section id="galeria" className="py-20 bg-white">
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
           {/* NAGŁÓWEK SEKCJI (DYNAMICZNY) */}
           <div className="text-center mb-16">
@@ -73,7 +72,7 @@ export default function MasonryGalleryBlock({ data }: { data: MasonryGalleryBloc
             ))}
           </div>
 
-          {/* Przycisk "Załaduj więcej" (pokazuje się, jeśli jest co ładować) */}
+          {/* Przycisk "Załaduj więcej" */}
           {!isExpanded && data.allImages.length > data.initialVisible && (
             <div className="text-center mt-12">
               <button

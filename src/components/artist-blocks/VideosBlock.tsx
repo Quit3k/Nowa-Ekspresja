@@ -38,7 +38,8 @@ export default function VideosBlock({ data }: { data: VideosBlockData }) {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    // --- POPRAWKA: Dodajemy ID pasujące do linku w Navbarze ---
+    <section id="filmy" className="py-20 bg-gray-50">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
         {/* NAGŁÓWEK SEKCJI (DYNAMICZNY) */}
         <div className="text-center mb-16">

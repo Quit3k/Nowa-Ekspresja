@@ -1,13 +1,15 @@
 // Plik: src/components/artist-blocks/InterviewsBlock.tsx
 
+import { Link } from 'react-router-dom';
+
 // --- DEFINICJA DANYCH ---
 // Definiujemy, jak wygląda pojedynczy wywiad
 interface InterviewItem {
-  year: string; // Rok jest używany jako klucz, ale zostawiam go też tutaj
-  image: string; // Będziemy tu podawać PEŁNĄ ścieżkę (np. /Nowa-Ekspresja/assets/...)
+  year: string;
+  image: string;
   title: string;
   excerpt: string;
-  readMoreUrl?: string; // Link do "Czytaj więcej..." (opcjonalny)
+  readMoreUrl?: string;
 }
 
 // Definiujemy, jakie dane (props) ten komponent będzie przyjmował
@@ -15,13 +17,14 @@ export interface InterviewsBlockData {
   title: string;
   quote: string;
   quoteAuthor: string;
-  interviews: InterviewItem[]; // Tablica wywiadów
+  interviews: InterviewItem[];
 }
 
 // --- KOMPONENT ---
 export default function InterviewsBlock({ data }: { data: InterviewsBlockData }) {
   return (
-    <section className="py-20 bg-gray-50">
+    // --- POPRAWKA: Dodajemy ID pasujące do linku w Navbarze ---
+    <section id="wywiady" className="py-20 bg-gray-50">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
         {/* NAGŁÓWEK SEKCJI (DYNAMICZNY) */}
         <div className="text-center mb-16">
@@ -39,7 +42,6 @@ export default function InterviewsBlock({ data }: { data: InterviewsBlockData })
 
         {/* SIATKA Z KAFLKAMI (DYNAMICZNA) */}
         <div className="space-y-12">
-          {/* Mapujemy po danych z propsów */}
           {data.interviews.map((item) => (
             <div key={item.year} className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row transition-shadow duration-300 hover:shadow-2xl">
               {/* ZDJĘCIE (DYNAMICZNE) */}
@@ -65,7 +67,7 @@ export default function InterviewsBlock({ data }: { data: InterviewsBlockData })
                   <div className="mt-auto">
                     <a
                       href={item.readMoreUrl}
-                      target="_blank" // Otwieraj linki do artykułów w nowej karcie
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-red-600 font-semibold hover:text-red-700 transition-colors"
                     >
