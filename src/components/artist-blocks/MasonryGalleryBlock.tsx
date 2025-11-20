@@ -3,11 +3,10 @@
 import { useState } from 'react';
 
 // --- DEFINICJA DANYCH ---
-// Definiujemy, jakie dane (props) ten komponent będzie przyjmował
 export interface MasonryGalleryBlockData {
   title: string;
-  allImages: string[]; // Tablica ścieżek do obrazów
-  initialVisible: number; // Ile obrazów pokazać na starcie
+  allImages: string[]; 
+  initialVisible: number; 
 }
 
 // --- KOMPONENT ---
@@ -40,7 +39,6 @@ export default function MasonryGalleryBlock({ data }: { data: MasonryGalleryBloc
 
   return (
     <>
-      {/* --- POPRAWKA: Dodajemy ID pasujące do linku w Navbarze --- */}
       <section id="galeria" className="py-20 bg-white">
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
           {/* NAGŁÓWEK SEKCJI (DYNAMICZNY) */}
@@ -92,7 +90,8 @@ export default function MasonryGalleryBlock({ data }: { data: MasonryGalleryBloc
           className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4 transition-opacity duration-300"
           onClick={closeImage}
         >
-          <div className="relative max-w-screen-lg max-h-[90vh] w-auto h-auto" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
+          {/* --- POPRAWKA TUTAJ: max-w-screen-lg na max-w-5xl --- */}
+          <div className="relative max-w-5xl max-h-[90vh] w-auto h-auto" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
             <img 
               src={selectedImage} 
               alt="Powiększone dzieło sztuki" 

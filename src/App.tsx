@@ -15,8 +15,9 @@ import MainLayout from './layouts/MainLayout';
 import ArtistLayout from './layouts/ArtistLayout';
 
 // --- NOWY IMPORT PODSTRONY ARTYSTY ---
-// Wskazujemy na plik, który stworzyliśmy w Kroku 7
 import ArtistDetailPage from './pages/ArtistDetailPage';
+// --- IMPORT NOWEJ PODSTRONY ---
+import EasternExpressionsPage from './pages/EasternExpressionPage';
 
 
 // --- Komponent do obsługi przewijania (bez zmian) ---
@@ -56,11 +57,8 @@ function HomePageContent() {
   );
 }
 
-// --- ArtistDetailPage ZOSTAŁ STĄD USUNIĘTY ---
-// (ponieważ jest teraz w osobnym pliku)
 
-
-// --- GŁÓWNY KOMPONENT APLIKACJI (bez zmian w logice) ---
+// --- GŁÓWNY KOMPONENT APLIKACJI ---
 export default function App() {
   return (
     <>
@@ -71,6 +69,8 @@ export default function App() {
         {/* ŚCIEŻKI UŻYWAJĄCE GŁÓWNEGO LAYOUTU */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePageContent />} />
+          {/* NOWA ŚCIEŻKA: */}
+          <Route path="/wschodnia-ekspresja" element={<EasternExpressionsPage />} />
         </Route>
 
         {/* ŚCIEŻKI UŻYWAJĄCE LAYOUTU ARTYSTY */}

@@ -1,7 +1,5 @@
 // Plik: src/components/artist-blocks/InterviewsBlock.tsx
 
-import { Link } from 'react-router-dom';
-
 // --- DEFINICJA DANYCH ---
 // Definiujemy, jak wygląda pojedynczy wywiad
 interface InterviewItem {
@@ -23,7 +21,6 @@ export interface InterviewsBlockData {
 // --- KOMPONENT ---
 export default function InterviewsBlock({ data }: { data: InterviewsBlockData }) {
   return (
-    // --- POPRAWKA: Dodajemy ID pasujące do linku w Navbarze ---
     <section id="wywiady" className="py-20 bg-gray-50">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
         {/* NAGŁÓWEK SEKCJI (DYNAMICZNY) */}
