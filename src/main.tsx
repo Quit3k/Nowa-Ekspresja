@@ -1,18 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+// Importujemy HashRouter - to klucz do działania na GitHub Pages
+import { HashRouter } from 'react-router-dom'
 import App from './App.tsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    
-    {/* POPRAWKA: Dodajemy `basename` pasujący DOKŁADNIE 
-      do wartości 'base' z pliku vite.config.ts 
+    {/* Używamy HashRoutera. 
+      Sprawia on, że linki wyglądają tak: /#/wschodnia-ekspresja
+      Dzięki temu serwer GitHub zawsze wie, jak obsłużyć odświeżenie strony.
+      Nie potrzebujemy tu atrybutu 'basename'.
     */}
-    <BrowserRouter basename="/Nowa-Ekspresja/">
+    <HashRouter>
       <App />
-    </BrowserRouter>
-
+    </HashRouter>
   </React.StrictMode>,
 )
