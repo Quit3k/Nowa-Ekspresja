@@ -155,13 +155,13 @@ export default function FilterableGallery({ title, items }: FilterableGalleryPro
       {/* --- MODAL (LIGHTBOX) --- */}
       {currentImage && (
         <div 
-          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center"
+          className="fixed inset-0 z-100 bg-black/95 backdrop-blur-sm flex items-center justify-center"
           onClick={closeModal}
         >
           {/* Przycisk zamknij */}
           <button
             onClick={closeModal}
-            className="fixed top-6 right-6 z-[110] text-white/70 hover:text-white bg-black/20 hover:bg-red-600 rounded-full p-3 transition-all duration-200"
+            className="fixed top-6 right-6 z-110 text-white/70 hover:text-white bg-black/20 hover:bg-red-600 rounded-full p-3 transition-all duration-200"
             aria-label="Zamknij"
           >
             <X size={32} />
@@ -170,7 +170,7 @@ export default function FilterableGallery({ title, items }: FilterableGalleryPro
           {/* Strzałka w lewo */}
           <button
             onClick={(e) => { e.stopPropagation(); showPrev(); }}
-            className="fixed left-4 top-1/2 -translate-y-1/2 z-[110] text-white/70 hover:text-white bg-black/20 hover:bg-black/50 rounded-full p-3 transition-all duration-200 hidden md:block"
+            className="fixed left-4 top-1/2 -translate-y-1/2 z-110 text-white/70 hover:text-white bg-black/20 hover:bg-black/50 rounded-full p-3 transition-all duration-200 hidden md:block"
             aria-label="Poprzednie"
           >
             <ChevronLeft size={40} />
@@ -179,7 +179,7 @@ export default function FilterableGallery({ title, items }: FilterableGalleryPro
           {/* Strzałka w prawo */}
           <button
             onClick={(e) => { e.stopPropagation(); showNext(); }}
-            className="fixed right-4 top-1/2 -translate-y-1/2 z-[110] text-white/70 hover:text-white bg-black/20 hover:bg-black/50 rounded-full p-3 transition-all duration-200 hidden md:block"
+            className="fixed right-4 top-1/2 -translate-y-1/2 z-110 text-white/70 hover:text-white bg-black/20 hover:bg-black/50 rounded-full p-3 transition-all duration-200 hidden md:block"
             aria-label="Następne"
           >
             <ChevronRight size={40} />
