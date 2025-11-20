@@ -19,7 +19,8 @@ export default function Navbar() {
     { href: "/#historia", label: "Historia" },
     { href: "/#wystawy", label: "Wystawy główne" }, 
     { href: "/#miejsca", label: "Miejsca" }, 
-    { href: "/#ekspresje", label: "Wschodnie ekspresje" }, 
+    // ZMIANA: Ten link teraz prowadzi do nowej podstrony, a nie do sekcji
+    { href: "/wschodnia-ekspresja", label: "Wschodnie ekspresje" }, 
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -50,10 +51,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* ===========================================================
-          POPRAWKA: Przycisk "Artyści" teraz przewija do sekcji #artysci
-          ===========================================================
-        */}
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             to="/#artysci"
@@ -88,7 +85,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            {/* POPRAWKA: Przycisk mobilny "Artyści" też przewija do sekcji */}
             <Link 
               to="/#artysci"
               className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-red-600 px-8 py-3 text-center font-semibold text-white"
